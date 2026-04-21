@@ -1,5 +1,6 @@
 const API_KEY = '20ddfa3b9ce347ae91f27a8cb94e2d4f';
 const BASE_URL = 'https://api.football-data.org/v4';
+const PROXY = 'https://corsproxy.io/?';
 
 const COMPETITIONS = ['PL', 'PD', 'BL1', 'SA', 'FL1', 'CL'];
 
@@ -15,11 +16,11 @@ async function load(type) {
         const allMatches = [];
 
         for (const comp of COMPETITIONS) {
-            const url = type === 'liveMatches'
+            const apiUrl = type === 'liveMatches'
                 ? `${BASE_URL}/competitions/${comp}/matches?status=LIVE`
                 : `${BASE_URL}/competitions/${comp}/matches?dateFrom=${today}&dateTo=${today}`;
 
-            const res = await fetch(url, {
+            const res = await fetch(PROXY + encodeURIComponent(apiUrl), {
                 headers: { 'X-Auth-Token': API_KEY }
             });
 
