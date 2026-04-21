@@ -1,0 +1,72 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #011627;
+    color: white;
+    direction: rtl;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 { color: #FF9F1C; }
+
+.tabs { margin-bottom: 30px; }
+
+button {
+    padding: 10px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF9F1C;
+    color: #011627;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { background-color: #fdfffc; }
+
+#content { max-width: 600px; margin: 0 auto; }
+
+.match-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.league-name {
+    color: #2EC4B6;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.match-teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.score {
+    background: #FF9F1C;
+    color: #011627;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.match-status {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.loading { color: #2EC4B6; animation: blink 1s infinite; }
+.error { color: #E71D36; }
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
